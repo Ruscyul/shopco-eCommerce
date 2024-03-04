@@ -1,3 +1,8 @@
 body {
   font-family: var(--font-family-base), sans-serif;
 }
+
+a,
+button {
+  cursor: pointer;
+}

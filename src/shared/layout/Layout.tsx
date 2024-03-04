@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
+import styles from './Layout.module.scss';
 
 type LayoutProps = {
   header?: ReactNode;
@@ -8,9 +9,9 @@ type LayoutProps = {
 
 function Layout(props: LayoutProps) {
   return (
-    <div>
+    <div className={styles.layout}>
       {props.header}
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
       {props.footer}

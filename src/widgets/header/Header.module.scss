@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 23px;
+  height: 64px;
+
+  &__menu-button {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__icons-group {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__icon-container {
+    width: 24px;
+    height: 24px;
+  }
+}
