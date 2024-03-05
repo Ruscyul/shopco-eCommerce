@@ -7,4 +7,8 @@
   --color-bg: #f0f0f0;
 
   --container-padding-inline: 16px;
+
+  @include breakpoint($laptop) {
+    --container-padding-inline: 100px;
+  }
 }

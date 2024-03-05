@@ -1,9 +1,23 @@
+@import '../../app/styles/media.scss';
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 23px;
   height: 64px;
+
+  @include breakpoint($laptop) {
+    gap: 40px;
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      gap: 24px;
+      white-space: nowrap;
+    }
+  }
 
   &__menu-button {
     width: 24px;
@@ -14,13 +28,46 @@
     display: flex;
   }
 
+  &__search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 577px;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+
+    @include breakpoint($laptop - 0.1px, max) {
+      display: none;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 16px;
+    }
+
+    &-input {
+      width: 100%;
+      padding-block: 14px;
+      padding-right: 16px;
+      padding-left: 52px;
+      border-radius: 62px;
+      background-color: var(--color-bg);
+    }
+  }
+
   &__icons-group {
     display: flex;
     gap: 12px;
   }
 
-  &__icon-container {
+  &__icon-button {
     width: 24px;
     height: 24px;
+
+    &:has(.header__search-icon) {
+      @include breakpoint($laptop) {
+        display: none;
+      }
+    }
   }
 }

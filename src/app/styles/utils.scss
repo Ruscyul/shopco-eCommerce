@@ -1,3 +1,15 @@
 .container {
   padding-inline: var(--container-padding-inline);
 }
+
+.hidden-mobile {
+  @include breakpoint($tablet - 0.1px, max) {
+    display: none;
+  }
+}
+
+.visible-mobile {
+  @include breakpoint($tablet) {
+    display: none;
+  }
+}
