@@ -28,6 +28,9 @@
 
   --container-padding-inline: 16px;
 
+  @include breakpoint($mobile) {
+    --container-padding-inline: 25px;
+  }
   @include breakpoint($laptop) {
     --container-padding-inline: 50px;
   }

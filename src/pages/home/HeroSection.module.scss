@@ -17,18 +17,16 @@
   @include breakpoint($laptop) {
     padding-top: 103px;
     padding-bottom: 116px;
-    display: flex;
-
-    background-image: url('../../shared/assets/hero-image.png');
-    background-position: bottom 0px right -68px;
-    background-repeat: no-repeat;
-    background-size: 100%;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include breakpoint($mobile) {
+      margin: 0 auto;
+    }
 
     @include breakpoint($tablet) {
       gap: 32px;
@@ -47,8 +45,10 @@
   }
 
   &__button {
-    @include breakpoint($tablet) {
+    @include breakpoint($mobile) {
       max-width: 210px;
+    }
+    @include breakpoint($tablet) {
       margin-bottom: 16px;
     }
   }
@@ -79,8 +79,11 @@
     column-gap: 55px;
     row-gap: 12px;
 
-    @include breakpoint($tablet) {
+    @include breakpoint($mobile) {
       justify-content: flex-start;
+      column-gap: 35px;
+    }
+    @include breakpoint($tablet) {
       column-gap: 64px;
     }
   }
