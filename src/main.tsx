@@ -7,23 +7,23 @@ import { Home, Shop, Product, Cart } from './pages';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/shopco-eCommerce',
     element: <App />,
     children: [
       {
-        path: '/',
+        path: '/shopco-eCommerce',
         element: <Home />,
       },
       {
-        path: '/shop',
+        path: '/shopco-eCommerce/shop',
         element: <Shop />,
       },
       {
-        path: '/product',
+        path: '/shopco-eCommerce/product',
         element: <Product />,
       },
       {
-        path: '/cart',
+        path: '/shopco-eCommerce/cart',
         element: <Cart />,
       },
     ],
