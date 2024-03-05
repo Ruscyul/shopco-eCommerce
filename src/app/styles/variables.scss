@@ -2,13 +2,36 @@
   --font-family-base: 'Satoshi';
   --font-family-accent: 'Integral CF';
 
+  --font-size-h1: 36px;
+  --font-size-h2: 32px;
+
+  --font-size-body: 14px;
+
+  @include breakpoint($laptop) {
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-body: 16px;
+  }
+
+  @include breakpoint($desktop) {
+    --font-size-h1: 64px;
+    --font-size-h2: 48px;
+    --font-size-body: 16px;
+  }
+
   --color-dark: #000000;
+  --color-dark-transparent: #00000099;
   --color-light: #ffffff;
   --color-bg: #f0f0f0;
+
+  --border-radius: 62px;
 
   --container-padding-inline: 16px;
 
   @include breakpoint($laptop) {
+    --container-padding-inline: 50px;
+  }
+  @include breakpoint($desktop) {
     --container-padding-inline: 100px;
   }
 }

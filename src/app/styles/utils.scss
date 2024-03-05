@@ -1,5 +1,10 @@
 .container {
   padding-inline: var(--container-padding-inline);
+
+  @include breakpoint($desktop) {
+    margin: 0 auto;
+    width: 1440px;
+  }
 }
 
 .hidden-mobile {
