@@ -1,0 +1,29 @@
+@import '../../app/styles/media.scss';
+
+.input {
+  &-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($laptop - 0.1px, max) {
+      display: none;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    left: 16px;
+    opacity: 0.4;
+  }
+
+  &-field {
+    width: 100%;
+    padding-block: 14px;
+    padding-right: 16px;
+    padding-left: 52px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg);
+  }
+}

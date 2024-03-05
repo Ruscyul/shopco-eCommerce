@@ -5,10 +5,15 @@
   align-items: center;
   justify-content: space-between;
   padding-block: 23px;
-  height: 64px;
 
   @include breakpoint($laptop) {
     gap: 40px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
 
   &__menu {
@@ -26,33 +31,20 @@
 
   &__logo {
     display: flex;
+
+    &-image {
+      width: 126px;
+      height: 18px;
+
+      @include breakpoint($laptop) {
+        width: 160px;
+        height: 22px;
+      }
+    }
   }
 
   &__search-bar {
-    position: relative;
-    width: 100%;
     max-width: 577px;
-    display: flex;
-    align-items: center;
-    opacity: 0.6;
-
-    @include breakpoint($laptop - 0.1px, max) {
-      display: none;
-    }
-
-    &-icon {
-      position: absolute;
-      left: 16px;
-    }
-
-    &-input {
-      width: 100%;
-      padding-block: 14px;
-      padding-right: 16px;
-      padding-left: 52px;
-      border-radius: 62px;
-      background-color: var(--color-bg);
-    }
   }
 
   &__icons-group {
