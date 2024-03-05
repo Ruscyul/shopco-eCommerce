@@ -1,0 +1,18 @@
+@import '../../app/styles/media.scss';
+
+.partners {
+  padding-block: 40px;
+  background-color: var(--color-dark);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    flex-wrap: wrap;
+
+    @include breakpoint($tablet) {
+      justify-content: space-between;
+    }
+  }
+}

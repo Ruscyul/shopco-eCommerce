@@ -24,10 +24,6 @@
     flex-direction: column;
     gap: 20px;
 
-    @include breakpoint($mobile) {
-      margin: 0 auto;
-    }
-
     @include breakpoint($tablet) {
       gap: 32px;
       max-width: 596px;

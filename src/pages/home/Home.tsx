@@ -1,7 +1,13 @@
 import HeroSection from './HeroSection';
+import PartnersSection from './PartnersSection';
 
 function Home() {
-  return <HeroSection />;
+  return (
+    <>
+      <HeroSection />
+      <PartnersSection />
+    </>
+  );
 }
 
 export default Home;
