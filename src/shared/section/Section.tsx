@@ -1,6 +1,5 @@
 import Button from '../../shared/button/Button';
 import styles from './Section.module.scss';
-import buttonStyles from '../../shared/button/Button.module.scss';
 import { ReactNode } from 'react';
 
 interface sectionProps {
@@ -18,8 +17,10 @@ function Section(props: sectionProps) {
       <h2 className={styles['section__title']}>{title}</h2>
       {children}
       <Button
-        className={`${styles['section__button']} ${buttonStyles['button--transparent']} ${buttonStyles['button--small']}`}
+        className={`${styles['section__button']}`}
         text={buttonText}
+        size="button--small"
+        color="button--transparent"
       />
     </section>
   );
