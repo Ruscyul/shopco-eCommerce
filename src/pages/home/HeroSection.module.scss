@@ -1,6 +1,7 @@
 @import '../../app/styles/media.scss';
 
 .hero {
+  position: relative;
   padding-top: 40px;
   background-color: var(--color-bg);
 
@@ -9,9 +10,14 @@
     display: flex;
 
     background-image: url('../../shared/assets/hero-image.png');
-    background-position: bottom 0px right -68px;
+    background-position: bottom -1px right -68px;
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+
+  @include breakpoint($desktop) {
+    background-position: center;
+    background-size: cover;
   }
 
   @include breakpoint($laptop) {
