@@ -1,0 +1,31 @@
+.dress-style {
+  &__content {
+    padding: 40px 24px 27px;
+    border-radius: 20px;
+    background-color: var(--color-bg);
+  }
+
+  &__title {
+    margin-bottom: 28px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__categories {
+    &-list {
+      display: grid;
+      row-gap: 16px;
+    }
+
+    &-item {
+      height: 190px;
+      border-radius: 20px;
+      background-color: var(--color-light);
+
+      &-title {
+        padding-top: 16px;
+        padding-left: 24px;
+      }
+    }
+  }
+}

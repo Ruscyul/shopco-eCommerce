@@ -4,17 +4,20 @@
 
   --font-size-h1: 36px;
   --font-size-h2: 32px;
+  --font-size-h3: 24px;
   --font-size-body: 14px;
 
   @include breakpoint($laptop) {
     --font-size-h1: 48px;
     --font-size-h2: 36px;
+    --font-size-h3: 28px;
     --font-size-body: 16px;
   }
 
   @include breakpoint($desktop) {
     --font-size-h1: 64px;
     --font-size-h2: 48px;
+    --font-size-h3: 36px;
     --font-size-body: 16px;
   }
 
