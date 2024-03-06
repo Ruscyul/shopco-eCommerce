@@ -1,0 +1,60 @@
+@import '../../../app/styles/media.scss';
+
+.product-card {
+  &__image {
+    width: 200px;
+    aspect-ratio: 1/1;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    background-color: var(--color-bg);
+
+    @include breakpoint($desktop) {
+      width: 295px;
+      margin-bottom: 16px;
+      border-radius: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 700;
+
+    @include breakpoint($desktop) {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 11px;
+    margin-bottom: 4px;
+
+    @include breakpoint($desktop) {
+      margin-bottom: 8px;
+    }
+
+    &-numbers {
+      font-size: 12px;
+      color: var(--color-dark-transparent-60);
+
+      @include breakpoint($desktop) {
+        font-size: 14px;
+      }
+
+      &-accent {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+
+    @include breakpoint($desktop) {
+      font-size: 24px;
+    }
+  }
+}

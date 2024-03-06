@@ -4,7 +4,6 @@
 
   --font-size-h1: 36px;
   --font-size-h2: 32px;
-
   --font-size-body: 14px;
 
   @include breakpoint($laptop) {
@@ -20,7 +19,8 @@
   }
 
   --color-dark: #000000;
-  --color-dark-transparent: #00000099;
+  --color-dark-transparent-60: #00000099;
+  --color-dark-transparent-10: #0000001a;
   --color-light: #ffffff;
   --color-bg: #f0f0f0;
 
