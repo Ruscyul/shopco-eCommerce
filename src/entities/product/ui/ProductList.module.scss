@@ -4,9 +4,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
   justify-items: center;
-  gap: 20px;
+  column-gap: 14px;
+  row-gap: 24px;
 
   @include breakpoint($tablet) {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 36px;
   }
 }
