@@ -1,6 +1,11 @@
+import { Product } from '../../../shared/types';
 import styles from './ProductCard.module.scss';
 
-function ProductCard({ product }) {
+interface ProductProps {
+  product: Product;
+}
+
+function ProductCard({ product }: ProductProps) {
   return (
     <div className={styles['product-card']}>
       <div className={styles['product-card__image-container']}>

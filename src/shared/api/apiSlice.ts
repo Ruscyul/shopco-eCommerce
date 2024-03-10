@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { Product } from '../types';
 
 export const apiSlice = createApi({
   reducerPath: 'api',
@@ -6,7 +7,7 @@ export const apiSlice = createApi({
     baseUrl: 'https://fakestoreapi.com',
   }),
   endpoints: (builder) => ({
-    getProducts: builder.query({
+    getProducts: builder.query<Product[], void>({
       query: () => '/products',
     }),
   }),
