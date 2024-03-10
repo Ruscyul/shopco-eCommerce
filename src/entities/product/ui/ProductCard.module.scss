@@ -64,6 +64,14 @@
       margin-bottom: 8px;
     }
 
+    &-stars > svg {
+      width: 15px;
+
+      @include breakpoint($desktop) {
+        width: 19px;
+      }
+    }
+
     &-numbers {
       font-size: 12px;
       color: var(--color-dark-transparent-60);
