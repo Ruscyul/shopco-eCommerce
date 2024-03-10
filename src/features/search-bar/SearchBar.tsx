@@ -1,4 +1,4 @@
-import Input from '../../shared/input/Input';
+import Input from '../../shared/ui/input/Input';
 import icon from '../../shared/assets/icons/search.svg';
 
 interface SearchBarProps {

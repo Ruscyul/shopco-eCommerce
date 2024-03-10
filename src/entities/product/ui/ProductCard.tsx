@@ -1,17 +1,21 @@
 import styles from './ProductCard.module.scss';
 
-function ProductCard() {
+function ProductCard({ product }) {
   return (
     <div className={styles['product-card']}>
-      <img src="" alt="" className={styles['product-card__image']} />
-      <p className={styles['product-card__title']}>T-shirt with Tape Details</p>
-      <div className={styles['product-card__rating']}>
-        <div className={styles['product-card__rating-stars']}>****</div>
-        <p className={styles['product-card__rating-numbers']}>
-          <span className={styles['product-card__rating-numbers-accent']}>4/</span>5
-        </p>
+      <div className={styles['product-card__image-container']}>
+        <img src={product.image} alt="" className={styles['product-card__image']} />
       </div>
-      <p className={styles['product-card__price']}>$120</p>
+      <p className={styles['product-card__title']}>{product.title}</p>
+      <div className={styles['product-card__content']}>
+        <div className={styles['product-card__rating']}>
+          <div className={styles['product-card__rating-stars']}>****</div>
+          <p className={styles['product-card__rating-numbers']}>
+            <span className={styles['product-card__rating-numbers-accent']}>{product.rating.rate}/</span>5
+          </p>
+        </div>
+        <p className={styles['product-card__price']}>${product.price}</p>
+      </div>
     </div>
   );
 }

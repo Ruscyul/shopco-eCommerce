@@ -1,5 +1,5 @@
 import styles from './HeroSection.module.scss';
-import Button from '../../shared/button/Button';
+import Button from '../../shared/ui/button/Button';
 
 function HeroSection() {
   return (

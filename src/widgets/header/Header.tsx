@@ -1,6 +1,7 @@
 import SearchBar from '../../features/search-bar/SearchBar';
 import styles from './Header.module.scss';
 import logo from '../../shared/assets/logo.svg';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -21,13 +22,17 @@ function Header() {
             />
           </svg>
         </button>
-        <a className={styles['header__logo']}>
-          <img src={logo} alt="shop.co" className={styles['header__logo-image']} />
-        </a>
+        <Link to={'/shopco-eCommerce/'}>
+          <a className={styles['header__logo']}>
+            <img src={logo} alt="shop.co" className={styles['header__logo-image']} />
+          </a>
+        </Link>
       </div>
       <nav className={`${styles['header__menu']} hidden-mobile`}>
         <ul className={styles['header__menu-list']}>
-          <li className={styles['header__menu-item']}>Shop</li>
+          <Link to={'/shopco-eCommerce/shop'}>
+            <li className={styles['header__menu-item']}>Shop </li>
+          </Link>
           <li className={styles['header__menu-item']}>On Sale</li>
           <li className={styles['header__menu-item']}>New Arrivals</li>
           <li className={styles['header__menu-item']}>Brands</li>

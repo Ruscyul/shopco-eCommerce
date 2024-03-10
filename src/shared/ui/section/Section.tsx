@@ -1,4 +1,4 @@
-import Button from '../../shared/button/Button';
+import Button from '../button/Button';
 import styles from './Section.module.scss';
 import { ReactNode } from 'react';
 

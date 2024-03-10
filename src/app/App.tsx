@@ -1,4 +1,4 @@
-import Layout from '../shared/layout/Layout';
+import Layout from '../shared/ui/layout/Layout';
 import Header from '../widgets/header/Header';
 
 function App() {
