@@ -8,7 +8,7 @@ interface ProductProps {
 }
 
 function ProductCard({ product }: ProductProps) {
-  let stars = [];
+  const stars = [];
 
   for (let i = 1; i <= product.rating.rate; i++) {
     stars.push(<Star />);

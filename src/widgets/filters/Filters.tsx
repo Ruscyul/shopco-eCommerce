@@ -2,7 +2,13 @@ import Button from '../../shared/ui/button/Button';
 import styles from './Filters.module.scss';
 import Star from '../../shared/assets/icons/star.svg?react';
 
-function Filters(props) {
+interface FiltersProps {
+  className?: string;
+  isOpen: boolean;
+  setIsOpen: (arg0: boolean) => void;
+}
+
+function Filters(props: FiltersProps) {
   const { className = '', isOpen, setIsOpen } = props;
   function handleClose() {
     setIsOpen(false);
