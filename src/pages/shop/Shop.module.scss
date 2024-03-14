@@ -1,6 +1,45 @@
+@import '../../app/styles/media.scss';
+
 .shop {
   &__inner {
     display: flex;
     flex-direction: column;
+  }
+
+  &__heading {
+    margin-top: 20px;
+    margin-bottom: 29px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__product-count {
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__content {
+    @include breakpoint($tablet) {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__products-list {
+    width: 100%;
+  }
+
+  &__button-icon {
+    &-filters {
+      width: 32px;
+      height: 32px;
+
+      @include breakpoint($tablet) {
+        display: none;
+      }
+    }
   }
 }

@@ -1,0 +1,11 @@
+.button-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-bg);
+  border-radius: 62px;
+  flex-shrink: 0;
+}

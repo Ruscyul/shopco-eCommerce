@@ -25,3 +25,15 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
 }
+
+input {
+  accent-color: var(--color-dark);
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

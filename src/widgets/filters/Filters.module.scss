@@ -1,0 +1,115 @@
+@import '../../app/styles/media.scss';
+
+.filters {
+  width: 100%;
+  border-radius: 20px;
+
+  @include breakpoint($tablet) {
+    max-width: 245px;
+    display: block;
+    padding-inline: 19px;
+    border: 1px solid var(--color-dark-transparent-10);
+  }
+
+  @include breakpoint($laptop) {
+    max-width: 295px;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__section {
+    padding-top: 20px;
+
+    &:not(:first-child) {
+      padding-bottom: 20px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-dark-transparent-10);
+    }
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__button-icon {
+    &--close {
+      opacity: 0.4;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+
+      @include breakpoint($tablet) {
+        display: none;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: ' ';
+        height: 24px;
+        width: 2px;
+        background-color: var(--color-dark);
+        border-radius: 1px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__categories-list,
+  &__rating-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__rating-item {
+    & svg {
+      width: 15px;
+
+      @include breakpoint($desktop) {
+        width: 19px;
+      }
+    }
+  }
+
+  &__categories-item {
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__categories-item,
+  &__rating-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__button {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+}

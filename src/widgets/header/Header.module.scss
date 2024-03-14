@@ -1,13 +1,16 @@
 @import '../../app/styles/media.scss';
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 23px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 23px;
+    border-bottom: 1px solid var(--color-dark-transparent-10);
 
-  @include breakpoint($laptop) {
-    gap: 40px;
+    @include breakpoint($laptop) {
+      gap: 40px;
+    }
   }
 
   &__left {
