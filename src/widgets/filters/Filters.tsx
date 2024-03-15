@@ -52,7 +52,7 @@ function Filters(props: FiltersProps) {
             Price
           </label>
         </div>
-        <FiltersPriceRange id="price" name="price" min={0} max={1000} step={100} />
+        <FiltersPriceRange min={0} max={1000} step={100} />
       </div>
       <div className={styles.filters__section}>
         <div className={styles.filters__heading}>

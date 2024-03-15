@@ -9,7 +9,7 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], void>({
       query: () => '/products',
-      transformResponse: (data) => {
+      transformResponse: (data: Product[]) => {
         return data.filter((item) => item.category !== 'electronics');
       },
     }),
