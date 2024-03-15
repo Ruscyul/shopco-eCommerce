@@ -1,5 +1,5 @@
-import { Product } from '../../../shared/types';
-import ProductCard from './ProductCard';
+import { Product } from '../../shared/types';
+import ProductCard from '../../entities/product/ui/ProductCard';
 import styles from './ProductList.module.scss';
 
 interface ProductListProps {

@@ -1,6 +1,8 @@
 import Button from '../../shared/ui/button/Button';
 import styles from './Filters.module.scss';
 import Star from '../../shared/assets/icons/star.svg?react';
+import { useState } from 'react';
+import FiltersPriceRange from '../../features/filters-price-range/ui/FiltersPriceRange';
 
 interface FiltersProps {
   className?: string;
@@ -9,6 +11,12 @@ interface FiltersProps {
 }
 
 function Filters(props: FiltersProps) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleCheck() {
+    setIsChecked(!isChecked);
+  }
+
   const { className = '', isOpen, setIsOpen } = props;
   function handleClose() {
     setIsOpen(false);
@@ -44,7 +52,7 @@ function Filters(props: FiltersProps) {
             Price
           </label>
         </div>
-        <input type="range" id="price" name="price" min="0" max="1000" />
+        <FiltersPriceRange id="price" name="price" min={0} max={1000} step={100} />
       </div>
       <div className={styles.filters__section}>
         <div className={styles.filters__heading}>
@@ -58,7 +66,7 @@ function Filters(props: FiltersProps) {
         </div>
         <ul className={styles['filters__categories-list']}>
           <li className={styles['filters__categories-item']}>
-            <input type="checkbox" id="women-clothes" />
+            <input type="checkbox" id="women-clothes" name="women-clothes" checked={isChecked} onChange={handleCheck} />
             <label htmlFor="women-clothes">Women's clothes</label>
           </li>
           <li className={styles['filters__categories-item']}>

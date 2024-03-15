@@ -1,4 +1,4 @@
-import ProductList from '../../entities/product/ui/ProductList';
+import ProductList from '../../widgets/product-list/ProductList';
 import { useGetProductsQuery } from '../../shared/api/apiSlice';
 import ButtonIcon from '../../shared/ui/button-icon/ButtonIcon';
 import Filters from '../../widgets/filters/Filters';
