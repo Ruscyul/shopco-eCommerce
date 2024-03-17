@@ -1,28 +1,42 @@
-import { ChangeEvent, useState } from 'react';
-import styles from './FiltersPriceRange.module.scss';
+import { ChangeEvent, useEffect, useState } from 'react';
+import styles from './PriceRange.module.scss';
+import { useSelector } from 'react-redux';
+import { selectAllFilters } from '../../../../features/filters/filtersSlice';
 
-interface FiltersPriceRangeProps {
+interface PriceRangeProps {
   min: number;
   max: number;
   step: number;
+  valueMin: number;
+  valueMax: number;
+  handlePriceChange: (arg0: ChangeEvent<HTMLInputElement>, arg1: number) => void;
 }
 
-function FiltersPriceRange(props: FiltersPriceRangeProps) {
-  const { min, max, step } = props;
+function PriceRange(props: PriceRangeProps) {
+  const { min, max, step, valueMin, valueMax, handlePriceChange } = props;
 
-  const [minValue, setMinValue] = useState(min);
-  const [maxValue, setMaxValue] = useState(max);
+  const filters = useSelector(selectAllFilters);
+
+  const [minValue, setMinValue] = useState(valueMin);
+  const [maxValue, setMaxValue] = useState(valueMax);
+
+  useEffect(() => {
+    setMinValue(filters.price.min);
+    setMaxValue(filters.price.max);
+  }, [filters]);
 
   function handleMinChange(event: ChangeEvent<HTMLInputElement>) {
     const value = parseFloat(event.target.value);
     const newMinValue = Math.min(value, maxValue - step);
     setMinValue(newMinValue);
+    handlePriceChange(event, newMinValue);
   }
 
   function handleMaxChange(event: ChangeEvent<HTMLInputElement>) {
     const value = parseFloat(event.target.value);
     const newMaxValue = Math.max(value, minValue + step);
     setMaxValue(newMaxValue);
+    handlePriceChange(event, newMaxValue);
   }
 
   const minPos = ((minValue - min) / (max - min)) * 100;
@@ -38,6 +52,7 @@ function FiltersPriceRange(props: FiltersPriceRangeProps) {
         <input
           type="range"
           className={styles['price-range__input']}
+          id="minPrice"
           min={min}
           max={max}
           value={minValue}
@@ -47,6 +62,7 @@ function FiltersPriceRange(props: FiltersPriceRangeProps) {
         <input
           type="range"
           className={styles['price-range__input']}
+          id="maxPrice"
           min={min}
           max={max}
           value={maxValue}
@@ -63,4 +79,4 @@ function FiltersPriceRange(props: FiltersPriceRangeProps) {
   );
 }
 
-export default FiltersPriceRange;
+export default PriceRange;

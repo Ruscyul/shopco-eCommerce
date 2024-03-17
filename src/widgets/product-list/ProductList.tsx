@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { selectAllFilters } from '../../features/filters/filtersSlice';
 
 function ProductList() {
-  const { data: products = [], isLoading, isSuccess, isError } = useGetProductsQuery();
+  const { data: products = [], isFetching, isSuccess, isError } = useGetProductsQuery();
   const filters = useSelector(selectAllFilters);
 
   const filteredProducts = useMemo(() => {
@@ -32,7 +32,8 @@ function ProductList() {
           })}
         </div>
       )}
-      {isLoading && <p>Loading...</p>}
+      {isSuccess && filteredProducts.length === 0 && <p>No products found</p>}
+      {isFetching && <p>Loading...</p>}
       {isError && <p>Error loading products</p>}
     </>
   );

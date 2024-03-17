@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import styles from './Button.module.scss';
 
 interface ButtonProps {
@@ -5,12 +6,17 @@ interface ButtonProps {
   text: string;
   size?: 'button--small';
   color?: 'button--transparent' | 'button--light';
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 function Button(props: ButtonProps) {
-  const { className = '', text = '', size = '', color = '' } = props;
+  const { className = '', text = '', size = '', color = '', onClick } = props;
 
-  return <button className={`${styles.button} ${className} ${styles[color]} ${styles[size]}`}>{text}</button>;
+  return (
+    <button onClick={onClick} className={`${styles.button} ${className} ${styles[color]} ${styles[size]}`}>
+      {text}
+    </button>
+  );
 }
 
 export default Button;

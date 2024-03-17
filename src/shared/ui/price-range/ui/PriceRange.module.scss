@@ -28,8 +28,8 @@
     -moz-appearance: none;
 
     &::-webkit-slider-thumb {
-      height: 20px;
-      width: 20px;
+      height: 15px;
+      width: 15px;
       border-radius: 50%;
       background: var(--color-dark);
       pointer-events: auto;
@@ -37,8 +37,8 @@
     }
 
     &::-moz-range-thumb {
-      height: 20px;
-      width: 20px;
+      height: 15px;
+      width: 15px;
       border: none;
       border-radius: 50%;
       background: var(--color-dark);

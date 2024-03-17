@@ -43,7 +43,8 @@
   }
 
   &__button-icon {
-    &--close {
+    &--close,
+    &--reset {
       opacity: 0.4;
       position: relative;
       display: flex;
@@ -51,10 +52,6 @@
       justify-content: center;
       width: 24px;
       height: 24px;
-
-      @include breakpoint($tablet) {
-        display: none;
-      }
 
       &:hover {
         opacity: 1;
@@ -76,6 +73,18 @@
 
       &:after {
         transform: rotate(-45deg);
+      }
+    }
+
+    &--close {
+      @include breakpoint($tablet) {
+        display: none;
+      }
+    }
+
+    &--reset {
+      @include breakpoint($tablet - 0.1px, $direction: max) {
+        display: none;
       }
     }
   }

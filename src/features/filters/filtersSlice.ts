@@ -1,23 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../shared/types';
+import { CATEGORIES } from '../../shared/const';
 
 const initialState: RootState['filters'] = {
-  price: { min: 0, max: 1000 },
-  minRating: 0,
-  categories: [],
+  price: { min: 0, max: 700 },
+  minRating: 1,
+  categories: [CATEGORIES.jewelery, CATEGORIES.menClothing, CATEGORIES.womenClothing],
 };
 
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    testAction() {
-      console.log('works');
+    updateFilters(state, action) {
+      return action.payload;
+    },
+    resetFilters() {
+      return initialState;
     },
   },
 });
 
-export const { testAction } = filtersSlice.actions;
+export const { updateFilters, resetFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;
 
 export const selectAllFilters = (state: RootState) => state.filters;
