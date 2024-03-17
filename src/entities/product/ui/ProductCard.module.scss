@@ -53,6 +53,8 @@
 
   &__content {
     margin-top: auto;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__rating {
@@ -92,6 +94,19 @@
 
     @include breakpoint($desktop) {
       font-size: 24px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    width: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__icon {
+    &:hover {
+      fill: red;
     }
   }
 }

@@ -2,6 +2,9 @@ import { Product } from '../../../shared/types';
 import styles from './ProductCard.module.scss';
 import Star from '../../../shared/assets/icons/star.svg?react';
 import HalfStar from '../../../shared/assets/icons/star-half.svg?react';
+import Heart from '../../../shared/assets/icons/heart.svg?react';
+import Cart from '../../../shared/assets/icons/cart.svg?react';
+import ButtonIcon from '../../../shared/ui/button-icon/ButtonIcon';
 
 interface ProductProps {
   product: Product;
@@ -25,13 +28,19 @@ function ProductCard({ product }: ProductProps) {
       </div>
       <p className={styles['product-card__title']}>{product.title}</p>
       <div className={styles['product-card__content']}>
-        <div className={styles['product-card__rating']}>
-          <div className={styles['product-card__rating-stars']}>{stars}</div>
-          <p className={styles['product-card__rating-numbers']}>
-            <span className={styles['product-card__rating-numbers-accent']}>{product.rating.rate}/</span>5
-          </p>
+        <div>
+          <div className={styles['product-card__rating']}>
+            <div className={styles['product-card__rating-stars']}>{stars}</div>
+            <p className={styles['product-card__rating-numbers']}>
+              <span className={styles['product-card__rating-numbers-accent']}>{product.rating.rate}/</span>5
+            </p>
+          </div>
+          <p className={styles['product-card__price']}>${product.price}</p>
         </div>
-        <p className={styles['product-card__price']}>${product.price}</p>
+        <div className={styles['product-card__icons']}>
+          <ButtonIcon icon={<Heart />} className={styles['product-card__icon']} />
+          <ButtonIcon icon={<Cart />} className={styles['product-card__icon']} />
+        </div>
       </div>
     </div>
   );
