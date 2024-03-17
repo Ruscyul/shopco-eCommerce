@@ -6,7 +6,7 @@ interface ButtonProps {
   text: string;
   size?: 'button--small';
   color?: 'button--transparent' | 'button--light';
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 function Button(props: ButtonProps) {
