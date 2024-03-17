@@ -1,5 +1,4 @@
 import ProductList from '../../widgets/product-list/ProductList';
-import { useGetProductsQuery } from '../../shared/api/apiSlice';
 import ButtonIcon from '../../shared/ui/button-icon/ButtonIcon';
 import Filters from '../../widgets/filters/Filters';
 import FiltersIcon from '../../shared/assets/icons/filters.svg?react';
@@ -7,7 +6,6 @@ import styles from './Shop.module.scss';
 import { useState } from 'react';
 
 function Shop() {
-  const { data, isLoading, isSuccess, isError } = useGetProductsQuery();
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   function handleClick() {
     setIsFiltersOpen(true);
@@ -23,9 +21,7 @@ function Shop() {
         <div className={styles['shop__content']}>
           <Filters className={styles['shop__filters']} isOpen={isFiltersOpen} setIsOpen={setIsFiltersOpen} />
           <div className={styles['shop__products-list']}>
-            {isSuccess && <ProductList products={data} />}
-            {isLoading && <p>Loading...</p>}
-            {isError && <p>Error loading products</p>}
+            <ProductList />
           </div>
         </div>
       </div>

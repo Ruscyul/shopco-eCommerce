@@ -2,7 +2,7 @@ import Button from '../../shared/ui/button/Button';
 import styles from './Filters.module.scss';
 import Star from '../../shared/assets/icons/star.svg?react';
 import { useState } from 'react';
-import FiltersPriceRange from '../../features/filters-price-range/ui/FiltersPriceRange';
+import FiltersPriceRange from '../../features/filters/ui/FiltersPriceRange';
 
 interface FiltersProps {
   className?: string;
@@ -31,7 +31,7 @@ function Filters(props: FiltersProps) {
     }
     const item = (
       <li className={styles['filters__rating-item']}>
-        <input type="checkbox" id={`star-${i}`} />
+        <input type="radio" name="min-rating" id={`star-${i}`} />
         <label htmlFor={`star-${i}`}>{stars}</label>
       </li>
     );
@@ -56,7 +56,7 @@ function Filters(props: FiltersProps) {
       </div>
       <div className={styles.filters__section}>
         <div className={styles.filters__heading}>
-          <p className={styles.filters__title}>Rating</p>
+          <p className={styles.filters__title}>Minimum Rating</p>
         </div>
         <ul className={styles['filters__rating-list']}>{ratingItems.reverse()}</ul>
       </div>

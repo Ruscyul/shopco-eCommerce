@@ -1,18 +1,40 @@
-import { Product } from '../../shared/types';
 import ProductCard from '../../entities/product/ui/ProductCard';
 import styles from './ProductList.module.scss';
+import { useMemo } from 'react';
+import { useGetProductsQuery } from '../../shared/api/apiSlice';
+import { useSelector } from 'react-redux';
+import { selectAllFilters } from '../../features/filters/filtersSlice';
 
-interface ProductListProps {
-  products: Product[];
-}
+function ProductList() {
+  const { data: products = [], isLoading, isSuccess, isError } = useGetProductsQuery();
+  const filters = useSelector(selectAllFilters);
 
-function ProductList({ products }: ProductListProps) {
+  const filteredProducts = useMemo(() => {
+    return products
+      .filter((product) => {
+        return filters.categories.length ? filters.categories.includes(product.category) : true;
+      })
+      .filter((product) => {
+        return (
+          product.price >= filters.price.min &&
+          product.price <= filters.price.max &&
+          product.rating.rate >= filters.minRating
+        );
+      });
+  }, [products, filters]);
+
   return (
-    <div className={styles['product-list']}>
-      {products.map((product: Product) => {
-        return <ProductCard product={product} />;
-      })}
-    </div>
+    <>
+      {isSuccess && (
+        <div className={styles['product-list']}>
+          {filteredProducts.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
+        </div>
+      )}
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>Error loading products</p>}
+    </>
   );
 }
 
