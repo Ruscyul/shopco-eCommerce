@@ -4,6 +4,7 @@ import Filters from '../../widgets/filters/Filters';
 import FiltersIcon from '../../shared/assets/icons/filters.svg?react';
 import styles from './Shop.module.scss';
 import { useState } from 'react';
+import SortBy from '../../features/sort-by/ui/SortBy';
 
 function Shop() {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -15,7 +16,10 @@ function Shop() {
     <div className={styles.shop}>
       <div className={`${styles['shop__inner']} container`}>
         <div className={styles.shop__heading}>
-          <p className={styles['shop__product-count']}>Showing 1-10 of 100 Products</p>
+          <div className={styles['shop__heading-inner']}>
+            <p className={styles['shop__product-count']}>Showing 1-10 of 100 Products</p>
+            <SortBy />
+          </div>
           <ButtonIcon className={styles['shop__button-icon-filters']} icon={<FiltersIcon />} onClick={handleClick} />
         </div>
         <div className={styles['shop__content']}>

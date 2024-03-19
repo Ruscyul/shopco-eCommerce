@@ -20,4 +20,7 @@ export interface RootState {
     minRating: number;
     categories: string[];
   };
+  sortBy: {
+    currentSorting: string;
+  };
 }
