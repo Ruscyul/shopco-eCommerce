@@ -106,7 +106,9 @@
 
   &__icon {
     &:hover {
-      fill: red;
+      & * {
+        fill: red;
+      }
     }
   }
 }
