@@ -5,6 +5,8 @@ import HalfStar from '../../../shared/assets/icons/star-half.svg?react';
 import Heart from '../../../shared/assets/icons/heart.svg?react';
 import Cart from '../../../shared/assets/icons/cart.svg?react';
 import ButtonIcon from '../../../shared/ui/button-icon/ButtonIcon';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../features/cart/cartSlice';
 
 interface ProductProps {
   product: Product;
@@ -19,6 +21,12 @@ function ProductCard({ product }: ProductProps) {
   const decimal = Number(product.rating.rate.toString().split('.')[1]);
   if (decimal >= 5) {
     stars.push(<HalfStar />);
+  }
+
+  const dispatch = useDispatch();
+
+  function handleAddToCart(id: number) {
+    dispatch(addToCart({ id }));
   }
 
   return (
@@ -39,7 +47,11 @@ function ProductCard({ product }: ProductProps) {
         </div>
         <div className={styles['product-card__icons']}>
           <ButtonIcon icon={<Heart />} className={styles['product-card__icon']} />
-          <ButtonIcon icon={<Cart />} className={styles['product-card__icon']} />
+          <ButtonIcon
+            icon={<Cart />}
+            onClick={() => handleAddToCart(product.id)}
+            className={styles['product-card__icon']}
+          />
         </div>
       </div>
     </div>

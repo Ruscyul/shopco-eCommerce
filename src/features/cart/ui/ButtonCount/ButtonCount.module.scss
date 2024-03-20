@@ -1,0 +1,20 @@
+.button-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 6px;
+  background-color: var(--color-bg);
+  border-radius: 62px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &__operator {
+    padding-inline: 20px;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  &__result {
+    padding-inline: 5px;
+  }
+}

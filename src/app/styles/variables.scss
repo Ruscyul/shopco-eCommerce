@@ -6,6 +6,8 @@
   --font-size-h2: 32px;
   --font-size-h3: 24px;
   --font-size-body: 14px;
+  --font-size-body-lg: 16px;
+  --font-size-body-xl: 20px;
 
   @include breakpoint($laptop) {
     --font-size-h1: 48px;
@@ -19,6 +21,8 @@
     --font-size-h2: 48px;
     --font-size-h3: 36px;
     --font-size-body: 16px;
+    --font-size-body-lg: 20px;
+    --font-size-body-xl: 24px;
   }
 
   --color-dark: #000000;

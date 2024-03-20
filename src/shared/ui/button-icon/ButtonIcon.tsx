@@ -8,7 +8,7 @@ interface ButtonIconProps {
 }
 
 function ButtonIcon(props: ButtonIconProps) {
-  let { className = '', icon, onClick } = props;
+  const { className = '', icon, onClick } = props;
   return (
     <button onClick={onClick} className={`${styles['button-icon']} ${className}`}>
       {icon}

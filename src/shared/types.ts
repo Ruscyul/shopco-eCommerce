@@ -9,6 +9,7 @@ export interface Product {
     rate: number;
     count: number;
   };
+  count?: number;
 }
 
 export interface RootState {
@@ -22,5 +23,13 @@ export interface RootState {
   };
   sortBy: {
     currentSorting: string;
+  };
+  cart: {
+    productList: [
+      {
+        id: number;
+        count: number;
+      },
+    ];
   };
 }
