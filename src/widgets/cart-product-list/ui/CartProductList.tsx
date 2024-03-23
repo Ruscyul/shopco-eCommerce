@@ -4,8 +4,13 @@ import ButtonDelete from '../../../features/cart/ui/ButtonDelete/ButtonDelete';
 import ButtonCount from '../../../features/cart/ui/ButtonCount/ButtonCount';
 import { useDispatch } from 'react-redux';
 import { decrementCount, deleteFromCart, incrementCount } from '../../../features/cart/cartSlice';
+import { Product } from '../../../shared/types';
 
-function CartProductList(props) {
+interface CartProductListProps {
+  cartProducts: Product[];
+}
+
+function CartProductList(props: CartProductListProps) {
   const { cartProducts } = props;
   const dispatch = useDispatch();
 
