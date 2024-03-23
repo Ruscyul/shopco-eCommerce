@@ -9,7 +9,7 @@ export interface Product {
     rate: number;
     count: number;
   };
-  count?: number;
+  count: number;
 }
 
 export interface RootState {

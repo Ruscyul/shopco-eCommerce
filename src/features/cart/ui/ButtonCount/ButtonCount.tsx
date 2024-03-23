@@ -12,11 +12,17 @@ function ButtonCount(props: ButtonCountProps) {
   const { className, count, onIncrement, onDecrement } = props;
   return (
     <div className={`${className} ${styles['button-count']}`}>
-      <button className={styles['button-count__operator']} onClick={onDecrement}>
+      <button
+        className={`${styles['button-count__operator']} ${styles['button-count__operator--minus']}`}
+        onClick={onDecrement}
+      >
         -
       </button>
       <div className={styles['button-count__result']}>{count}</div>
-      <button className={styles['button-count__operator']} onClick={onIncrement}>
+      <button
+        className={`${styles['button-count__operator']} ${styles['button-count__operator--plus']}`}
+        onClick={onIncrement}
+      >
         +
       </button>
     </div>

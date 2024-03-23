@@ -25,6 +25,12 @@
       gap: 24px;
       white-space: nowrap;
     }
+
+    &-item {
+      &:hover {
+        border-bottom: 1px solid var(--color-dark);
+      }
+    }
   }
 
   &__menu-button {
@@ -48,6 +54,10 @@
 
   &__search-bar {
     max-width: 577px;
+
+    @include breakpoint($laptop - 0.1px, max) {
+      display: none;
+    }
   }
 
   &__icons-group {

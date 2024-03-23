@@ -1,7 +1,14 @@
+@import '../../../app/styles/media.scss';
+
 .cart-product-list {
+  width: 100%;
   border: 1px solid var(--color-dark-transparent-10);
   border-radius: 20px;
   padding-inline: 14px;
+
+  @include breakpoint($tablet) {
+    max-width: 715px;
+  }
 
   &__message {
     padding-block: 14px;

@@ -1,7 +1,9 @@
 .button-count {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 126px;
   padding-block: 6px;
   background-color: var(--color-bg);
   border-radius: 62px;
@@ -9,9 +11,16 @@
   font-weight: 500;
 
   &__operator {
-    padding-inline: 20px;
     font-size: inherit;
     font-weight: inherit;
+
+    &--minus {
+      padding-left: 5px;
+    }
+
+    &--plus {
+      padding-right: 5px;
+    }
   }
 
   &__result {

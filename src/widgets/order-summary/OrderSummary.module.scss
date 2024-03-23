@@ -1,0 +1,67 @@
+@import '../../app/styles/media.scss';
+
+.order-summary {
+  width: 100%;
+  border: 1px solid var(--color-dark-transparent-10);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include breakpoint($tablet) {
+    max-width: 505px;
+  }
+
+  &__title {
+    font-size: var(--font-size-body-xl);
+    font-weight: 700;
+  }
+
+  &__price-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-body-lg);
+
+    &:last-child {
+      padding-top: 20px;
+      border-top: 1px solid var(--color-dark-transparent-10);
+    }
+  }
+
+  &__price-category {
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__price {
+    font-weight: 700;
+
+    &--total {
+      font-size: var(--font-size-body-xl);
+    }
+  }
+
+  &__promo-code {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__promo-code-input {
+    @include breakpoint($mobile) {
+      width: 75%;
+    }
+  }
+
+  &__promo-code-button {
+    @include breakpoint($mobile) {
+      width: 25%;
+    }
+  }
+}

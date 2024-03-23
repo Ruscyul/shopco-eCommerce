@@ -1,3 +1,5 @@
+@import '../../app/styles/media.scss';
+
 .product-card {
   display: flex;
   gap: 14px;
@@ -32,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 5px;
   }
 
   &__title {
@@ -43,6 +46,14 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+  }
+
+  &__footer > * {
+    min-width: 50%;
+
+    @include breakpoint($mobile) {
+      min-width: unset;
+    }
   }
 
   &__price {
