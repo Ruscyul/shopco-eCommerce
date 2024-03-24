@@ -1,0 +1,125 @@
+@import '../../app/styles/media.scss';
+
+.product {
+  padding-top: 20px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image-container {
+    height: 290px;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+
+    @include breakpoint($desktop) {
+      font-size: 40px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  &__rating-numbers {
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__rating-numbers-accent {
+    color: var(--color-dark);
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+
+    @include breakpoint($desktop) {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+    height: 44px;
+    margin-bottom: 30px;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-bottom: 1px solid var(--color-dark-transparent-10);
+  }
+
+  &__tabs-button {
+    padding-block: 20px;
+    font-size: var(--font-size-body-lg);
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__tab-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-block: 20px;
+  }
+
+  &__tab-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__tab-name {
+    font-size: var(--font-size-body-xl);
+  }
+
+  &__tab-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__tab-write-button {
+    max-width: 112px;
+    padding-block: 12px;
+    padding-inline: 16px;
+    font-size: 12px;
+  }
+
+  &__tab-more-button {
+    max-width: 195px;
+    margin-block: 20px;
+    margin-inline: auto;
+    font-weight: 500;
+  }
+
+  &__suggestions-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}

@@ -2,10 +2,10 @@ import Input from '../../shared/ui/input/Input';
 import styles from './OrderSummary.module.scss';
 import PriceTagIcon from '../../shared/assets/icons/price-tag.svg';
 import Button from '../../shared/ui/button/Button';
-import { Product } from '../../shared/types';
+import { ProductType } from '../../shared/types';
 
 interface OrderSummaryProps {
-  cartProducts: Product[];
+  cartProducts: ProductType[];
 }
 
 function OrderSummary(props: OrderSummaryProps) {
@@ -14,7 +14,7 @@ function OrderSummary(props: OrderSummaryProps) {
   const subtotalSum = cartProducts.reduce((sum, product) => sum + product.price * product.count, 0);
   const discount = 0;
   const deliveryFee = subtotalSum > 0 ? 15 : 0;
-  const totalSum = subtotalSum - discount - deliveryFee;
+  const totalSum = subtotalSum - discount + deliveryFee;
 
   return (
     <>

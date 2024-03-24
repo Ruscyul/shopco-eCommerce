@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <Shop />,
       },
       {
-        path: '/shopco-eCommerce/product',
+        path: '/shopco-eCommerce/product/:id',
         element: <Product />,
       },
       {

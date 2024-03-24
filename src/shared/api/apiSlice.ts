@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Product } from '../types';
+import { ProductType } from '../types';
 
 export const apiSlice = createApi({
   reducerPath: 'api',
@@ -7,16 +7,19 @@ export const apiSlice = createApi({
     baseUrl: 'https://fakestoreapi.com',
   }),
   endpoints: (builder) => ({
-    getProducts: builder.query<Product[], void>({
+    getProducts: builder.query<ProductType[], void>({
       query: () => '/products',
-      transformResponse: (data: Product[]) => {
+      transformResponse: (data: ProductType[]) => {
         return data.filter((item) => item.category !== 'electronics');
       },
     }),
     getProductsByCategory: builder.query({
       query: (category) => `/products/category/${category}`,
     }),
+    getProductById: builder.query({
+      query: (id) => `/products/${id}`,
+    }),
   }),
 });
 
-export const { useGetProductsQuery, useGetProductsByCategoryQuery } = apiSlice;
+export const { useGetProductsQuery, useGetProductsByCategoryQuery, useGetProductByIdQuery } = apiSlice;

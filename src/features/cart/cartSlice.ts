@@ -27,16 +27,20 @@ const cartSlice = createSlice({
     },
     incrementCount(state, action) {
       const { id } = action.payload;
-      const index = state.productList.findIndex((product) => product.id === id);
-      if (state.productList[index].count >= 0) {
-        state.productList[index].count++;
+      const existingProductIndex = state.productList.findIndex((product) => product.id === id);
+      if (existingProductIndex !== -1) {
+        state.productList[existingProductIndex].count++;
+      } else {
+        state.productList.push({ id, count: 1 });
       }
     },
     decrementCount(state, action) {
       const { id } = action.payload;
-      const index = state.productList.findIndex((product) => product.id === id);
-      if (state.productList[index].count > 0) {
-        state.productList[index].count--;
+      const existingProductIndex = state.productList.findIndex((product) => product.id === id);
+      if (existingProductIndex !== -1) {
+        state.productList[existingProductIndex].count--;
+      } else {
+        return;
       }
     },
   },
