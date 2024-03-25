@@ -102,8 +102,16 @@ function Filters(props: FiltersProps) {
       <div className={styles.filters__section}>
         <div className={styles.filters__heading}>
           <p className={styles.filters__title}>Filters</p>
-          <button className={styles['filters__button-icon--close']} onClick={handleCloseFilters}></button>
-          <button className={styles['filters__button-icon--reset']} onClick={handleResetFilters}></button>
+          <button
+            className={styles['filters__button-icon--close']}
+            onClick={handleCloseFilters}
+            title="Close Filters"
+          ></button>
+          <button
+            className={styles['filters__button-icon--reset']}
+            onClick={handleResetFilters}
+            title="Reset Filters"
+          ></button>
         </div>
       </div>
       <div className={styles.filters__section}>

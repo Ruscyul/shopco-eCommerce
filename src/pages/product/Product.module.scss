@@ -13,9 +13,21 @@
     flex-direction: column;
   }
 
+  &__card {
+    @include breakpoint($tablet) {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
   &__image-container {
     height: 290px;
     margin-bottom: 20px;
+
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
   }
 
   &__image {
@@ -23,6 +35,12 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+  }
+
+  &__content {
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
   }
 
   &__title {
