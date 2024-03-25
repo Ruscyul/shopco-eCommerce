@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
-import { Product } from '../../shared/types';
+import { ProductType } from '../../shared/types';
 import styles from './CartProductCard.module.scss';
 
 interface CartProductCardProps {
-  product: Product;
+  product: ProductType;
   key: number;
   deleteButton: ReactNode;
   countButton: ReactNode;

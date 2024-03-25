@@ -4,10 +4,10 @@ import ButtonDelete from '../../../features/cart/ui/ButtonDelete/ButtonDelete';
 import ButtonCount from '../../../features/cart/ui/ButtonCount/ButtonCount';
 import { useDispatch } from 'react-redux';
 import { decrementCount, deleteFromCart, incrementCount } from '../../../features/cart/cartSlice';
-import { Product } from '../../../shared/types';
+import { ProductType } from '../../../shared/types';
 
 interface CartProductListProps {
-  cartProducts: Product[];
+  cartProducts: ProductType[];
 }
 
 function CartProductList(props: CartProductListProps) {
