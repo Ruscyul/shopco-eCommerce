@@ -3,6 +3,11 @@
 .product {
   padding-top: 20px;
 
+  &__loader {
+    margin: auto;
+    margin-top: 50px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -77,6 +82,19 @@
     padding-block: 20px;
     font-size: var(--font-size-body-lg);
     color: var(--color-dark-transparent-60);
+
+    &--active {
+      border-bottom: 2px solid var(--color-dark);
+      color: var(--color-dark);
+    }
+  }
+
+  &__tab-content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
   }
 
   &__tab-heading {
@@ -121,5 +139,20 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 40px;
+  }
+
+  &__suggestions-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+  }
+
+  &__suggestions-product {
+    flex-shrink: 0;
+    min-width: 200px;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
