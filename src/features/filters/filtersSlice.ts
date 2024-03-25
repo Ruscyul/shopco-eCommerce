@@ -13,7 +13,7 @@ const filtersSlice = createSlice({
   initialState,
   reducers: {
     updateFilters(state, action) {
-      return action.payload;
+      return { ...state, ...action.payload };
     },
     resetFilters() {
       return initialState;

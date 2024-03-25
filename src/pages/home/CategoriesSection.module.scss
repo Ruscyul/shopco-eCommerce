@@ -20,14 +20,30 @@
   }
 
   &__list {
-    display: grid;
-    row-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include breakpoint($tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__item {
     height: 190px;
     border-radius: 20px;
     background-color: var(--color-light);
+
+    &:hover {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      transition-duration: 0.2s;
+    }
+
+    &-link {
+      width: 100%;
+    }
 
     &-title {
       padding-top: 16px;
