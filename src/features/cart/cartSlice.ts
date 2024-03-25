@@ -29,7 +29,9 @@ const cartSlice = createSlice({
       const { id } = action.payload;
       const existingProductIndex = state.productList.findIndex((product) => product.id === id);
       if (existingProductIndex !== -1) {
-        state.productList[existingProductIndex].count++;
+        if (state.productList[existingProductIndex].count >= 0) {
+          state.productList[existingProductIndex].count++;
+        }
       } else {
         state.productList.push({ id, count: 1 });
       }
@@ -38,7 +40,9 @@ const cartSlice = createSlice({
       const { id } = action.payload;
       const existingProductIndex = state.productList.findIndex((product) => product.id === id);
       if (existingProductIndex !== -1) {
-        state.productList[existingProductIndex].count--;
+        if (state.productList[existingProductIndex].count > 0) {
+          state.productList[existingProductIndex].count--;
+        }
       } else {
         return;
       }

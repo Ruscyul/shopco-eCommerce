@@ -134,6 +134,7 @@ function Product() {
                 text="Load More Reviews"
                 color="button--transparent"
                 size="button--small"
+                disabled
               />
             </div>
 

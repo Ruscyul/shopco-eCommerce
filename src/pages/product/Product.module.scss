@@ -143,6 +143,7 @@
 
   &__suggestions-list {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
     overflow-x: scroll;
   }
@@ -153,6 +154,10 @@
 
     &:hover {
       transform: none;
+    }
+
+    @include breakpoint($desktop) {
+      max-width: 200px;
     }
   }
 }
