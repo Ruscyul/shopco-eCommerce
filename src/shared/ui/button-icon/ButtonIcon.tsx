@@ -4,13 +4,21 @@ import styles from './ButtonIcon.module.scss';
 interface ButtonIconProps {
   className?: string;
   icon: '' | ReactNode;
+  helperText: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
 function ButtonIcon(props: ButtonIconProps) {
-  const { className = '', icon, onClick } = props;
+  const { className = '', icon, helperText, disabled = false, onClick } = props;
   return (
-    <button onClick={onClick} className={`${styles['button-icon']} ${className}`}>
+    <button
+      onClick={onClick}
+      title={helperText}
+      disabled={disabled}
+      className={`${styles['button-icon']} ${className}`}
+    >
+      <span className="visually-hidden">{helperText}</span>
       {icon}
     </button>
   );

@@ -1,0 +1,123 @@
+@import '../../app/styles/media.scss';
+
+.footer {
+  margin-top: 185px;
+  padding-top: 190px;
+  padding-bottom: 77px;
+  background-color: var(--color-bg);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 24px;
+
+    @include breakpoint($tablet) {
+      grid-template-columns: repeat(4, 25%);
+    }
+
+    @include breakpoint($laptop) {
+      grid-template-columns: repeat(5, 20%);
+      justify-items: end;
+    }
+  }
+
+  &__heading {
+    grid-column: span 2;
+
+    @include breakpoint($tablet) {
+      grid-column: span 4;
+    }
+
+    @include breakpoint($laptop) {
+      grid-column: unset;
+    }
+  }
+
+  &__logo {
+    width: 144px;
+    margin-bottom: 14px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__social-button {
+    width: 28px;
+    aspect-ratio: 1/1;
+    background-color: var(--color-light);
+    border-color: var(--color-dark);
+
+    & > svg {
+      fill: var(--color-dark);
+    }
+
+    &:hover {
+      background-color: var(--color-dark);
+
+      & > svg {
+        fill: var(--color-light);
+      }
+    }
+  }
+
+  &__menu-title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__menu-item {
+    width: 155px;
+    color: var(--color-dark-transparent-60);
+
+    &:hover {
+      font-weight: 500;
+    }
+  }
+
+  &__footer {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-dark-transparent-10);
+
+    @include breakpoint($tablet) {
+      grid-column: span 4;
+    }
+
+    @include breakpoint($laptop) {
+      grid-column: span 5;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    color: var(--color-dark-transparent-60);
+  }
+
+  &__badges {
+    display: flex;
+    gap: 11px;
+  }
+}
