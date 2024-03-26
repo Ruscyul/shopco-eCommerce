@@ -66,24 +66,28 @@ function Footer() {
               icon={<TwitterIcon />}
               helperText="Twitter"
               disabled
+              border
               className={styles['footer__social-button']}
             />
             <ButtonIcon
               icon={<FacebookIcon />}
               helperText="Facebook"
               disabled
+              border
               className={styles['footer__social-button']}
             />
             <ButtonIcon
               icon={<InstagramIcon />}
               helperText="Instagram"
               disabled
+              border
               className={styles['footer__social-button']}
             />
             <ButtonIcon
               icon={<GithubIcon />}
               helperText="Github"
               disabled
+              border
               className={styles['footer__social-button']}
             />
           </div>
