@@ -4,14 +4,13 @@ import styles from './CartProductCard.module.scss';
 
 interface CartProductCardProps {
   product: ProductType;
-  key: number;
   deleteButton: ReactNode;
   countButton: ReactNode;
 }
 
-function CartProductCard({ product, key, deleteButton, countButton }: CartProductCardProps) {
+function CartProductCard({ product, deleteButton, countButton }: CartProductCardProps) {
   return (
-    <div className={styles['product-card']} key={key}>
+    <div className={styles['product-card']}>
       <div className={styles['product-card__img-container']}>
         <img src={product.image} alt="" className={styles['product-card__img']} />
       </div>

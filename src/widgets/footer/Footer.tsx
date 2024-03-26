@@ -93,11 +93,13 @@ function Footer() {
           </div>
         </div>
         {menuItems.map((item) => (
-          <div className={styles['footer__menu-block']}>
+          <div className={styles['footer__menu-block']} key={item.title}>
             <p className={styles['footer__menu-title']}>{item.title}</p>
             <ul className={styles['footer__menu-list']}>
               {item.links.map((link) => (
-                <li className={styles['footer__menu-item']}>{link}</li>
+                <li className={styles['footer__menu-item']} key={link}>
+                  {link}
+                </li>
               ))}
             </ul>
           </div>

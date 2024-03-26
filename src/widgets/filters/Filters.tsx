@@ -79,7 +79,7 @@ function Filters(props: FiltersProps) {
   for (let i = 1; i <= 5; i++) {
     const stars = [];
     for (let j = 1; j <= i; j++) {
-      stars.push(<Star />);
+      stars.push(<Star key={j} />);
     }
     const item = (
       <li className={styles['filters__rating-item']} key={i}>
@@ -116,7 +116,7 @@ function Filters(props: FiltersProps) {
       </div>
       <div className={styles.filters__section}>
         <div className={styles.filters__heading}>
-          <label htmlFor="price" className={styles.filters__title}>
+          <label htmlFor="minPrice" className={styles.filters__title}>
             Price
           </label>
         </div>
