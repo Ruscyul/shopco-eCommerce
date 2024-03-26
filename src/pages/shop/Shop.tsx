@@ -20,7 +20,12 @@ function Shop() {
             <p className={styles['shop__product-count']}>Showing 1-10 of 100 Products</p>
             <SortBy />
           </div>
-          <ButtonIcon className={styles['shop__button-icon-filters']} icon={<FiltersIcon />} onClick={handleClick} />
+          <ButtonIcon
+            icon={<FiltersIcon />}
+            helperText={'Show filters'}
+            className={styles['shop__button-icon-filters']}
+            onClick={handleClick}
+          />
         </div>
         <div className={styles['shop__content']}>
           <Filters className={styles['shop__filters']} isOpen={isFiltersOpen} setIsOpen={setIsFiltersOpen} />

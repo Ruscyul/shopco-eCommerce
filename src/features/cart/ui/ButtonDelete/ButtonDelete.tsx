@@ -8,7 +8,9 @@ interface ButtonDeleteProps {
 
 function ButtonDelete(props: ButtonDeleteProps) {
   const { className, onClick } = props;
-  return <ButtonIcon icon={<TrashcanIcon />} className={className} onClick={onClick} />;
+  return (
+    <ButtonIcon icon={<TrashcanIcon />} helperText={'Delete item from cart'} className={className} onClick={onClick} />
+  );
 }
 
 export default ButtonDelete;

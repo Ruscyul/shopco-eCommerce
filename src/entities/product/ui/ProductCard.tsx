@@ -48,9 +48,10 @@ function ProductCard(props: ProductProps) {
             <p className={styles['product-card__price']}>${product.price}</p>
           </div>
           <div className={styles['product-card__icons']} onClick={(event) => event.stopPropagation()}>
-            <ButtonIcon icon={<Heart />} className={styles['product-card__icon']} />
+            <ButtonIcon icon={<Heart />} helperText={'Add to favorites'} className={styles['product-card__icon']} />
             <ButtonIcon
               icon={<Cart />}
+              helperText={'Add to cart'}
               onClick={() => handleAddToCart(product.id, event)}
               className={styles['product-card__icon']}
             />
