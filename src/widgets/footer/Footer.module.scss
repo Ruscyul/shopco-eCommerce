@@ -1,10 +1,15 @@
 @import '../../app/styles/media.scss';
 
 .footer {
+  position: relative;
   margin-top: 185px;
   padding-top: 190px;
   padding-bottom: 77px;
   background-color: var(--color-bg);
+
+  @include breakpoint($tablet) {
+    margin-top: 80px;
+  }
 
   &__inner {
     display: grid;
@@ -19,6 +24,70 @@
       grid-template-columns: repeat(5, 20%);
       justify-items: end;
     }
+  }
+
+  &__subscribe {
+    position: absolute;
+    top: -200px;
+    left: var(--container-padding-inline);
+    right: var(--container-padding-inline);
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 24px;
+    background-color: var(--color-dark);
+    border-radius: 20px;
+
+    @include breakpoint($mobile) {
+      top: -150px;
+    }
+
+    @include breakpoint($tablet) {
+      top: -30px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include breakpoint($laptop) {
+      top: -50px;
+      padding: 43px 64px;
+    }
+  }
+
+  &__subscribe-title {
+    font-family: var(--font-family-accent);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-light);
+    text-transform: uppercase;
+
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+  }
+
+  &__subscribe-block {
+    @include breakpoint($tablet) {
+      max-width: 350px;
+      width: 50%;
+    }
+  }
+
+  &__subscribe-input {
+    margin-bottom: 12px;
+    height: 42px;
+
+    & > input {
+      background-color: var(--color-light);
+    }
+  }
+
+  &__subscribe-button {
+    height: 42px;
+    font-weight: 500;
   }
 
   &__heading {

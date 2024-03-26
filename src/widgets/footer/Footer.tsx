@@ -11,6 +11,9 @@ import MastercardIcon from '../../shared/assets/icons/mastercard.svg?react';
 import PayPalIcon from '../../shared/assets/icons/paypal.svg?react';
 import ApplePayIcon from '../../shared/assets/icons/apple-pay.svg?react';
 import GPayIcon from '../../shared/assets/icons/g-pay.svg?react';
+import Input from '../../shared/ui/input/Input';
+import Button from '../../shared/ui/button/Button';
+import letterIcon from '../../shared/assets/icons/letter.svg';
 
 const menuItems = [
   {
@@ -35,6 +38,24 @@ function Footer() {
   return (
     <footer className={styles['footer']}>
       <div className={`${styles['footer__inner']} container`}>
+        <div className={styles['footer__subscribe']}>
+          <p className={styles['footer__subscribe-title']}>Stay up to date about our latest offers</p>
+          <div className={styles['footer__subscribe-block']}>
+            <Input
+              text="Enter your email address"
+              icon={letterIcon}
+              className={styles['footer__subscribe-input']}
+              disabled
+            />
+            <Button
+              color="button--light"
+              text="Subscribe to Newsletter"
+              className={styles['footer__subscribe-button']}
+              disabled
+            />
+          </div>
+        </div>
+
         <div className={styles['footer__heading']}>
           <Logo className={styles['footer__logo']} />
           <p className={styles['footer__text']}>
