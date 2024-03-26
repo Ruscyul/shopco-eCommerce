@@ -1,5 +1,6 @@
 import styles from './HeroSection.module.scss';
 import Button from '../../shared/ui/button/Button';
+import { Link } from 'react-router-dom';
 
 function HeroSection() {
   return (
@@ -12,7 +13,9 @@ function HeroSection() {
               Browse through our diverse range of meticulously crafted garments, designed to bring out your
               individuality and cater to your sense of style.
             </p>
-            <Button className={styles['hero__button']} text="Shop Now" />
+            <Link to={'/shopco-eCommerce/shop'}>
+              <Button className={styles['hero__button']} text="Shop Now" />
+            </Link>
             <ul className={styles['hero__list']}>
               <li className={styles['hero__item']}>
                 <p className={styles['hero__item-details']}>

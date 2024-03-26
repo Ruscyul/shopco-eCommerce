@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../features/cart/cartSlice';
 import { getStars } from '../../../shared/model/getStars';
 import { Link } from 'react-router-dom';
-import { scrollToTop } from '../../../shared/model/scrollToTop';
 
 interface ProductProps {
   product: ProductType;
@@ -27,11 +26,7 @@ function ProductCard(props: ProductProps) {
   }
 
   return (
-    <Link
-      to={`/shopco-eCommerce/product/${product.id}`}
-      className={styles['product-card-link']}
-      onClick={() => scrollToTop()}
-    >
+    <Link to={`/shopco-eCommerce/product/${product.id}`} className={styles['product-card-link']}>
       <div className={`${styles['product-card']} ${className}`}>
         <div className={styles['product-card__image-container']}>
           <img src={product.image} alt="" className={styles['product-card__image']} />
