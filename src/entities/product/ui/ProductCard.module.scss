@@ -10,10 +10,6 @@
     transform: scale(1.05);
   }
 
-  @include breakpoint($desktop) {
-    max-width: 295px;
-  }
-
   &-link {
     display: flex;
   }
@@ -25,7 +21,6 @@
     background-color: var(--color-light);
 
     @include breakpoint($desktop) {
-      height: 295px;
       margin-bottom: 16px;
       border-radius: 20px;
     }
