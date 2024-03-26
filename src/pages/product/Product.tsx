@@ -16,7 +16,7 @@ import { skipToken } from '@reduxjs/toolkit/query';
 
 function Product() {
   const { id } = useParams();
-  const { data: product, isSuccess, isLoading, isError } = useGetProductByIdQuery(id);
+  const { data: product, isSuccess, isLoading, isFetching, isError } = useGetProductByIdQuery(id);
   const {
     data: categoryProducts,
     isSuccess: isCategoryProductsSuccess,
@@ -55,8 +55,8 @@ function Product() {
   return (
     <>
       {isError && <p>Error loading product. Try again!</p>}
-      {isLoading && <Loader className={styles['product__loader']} />}
-      {isSuccess && (
+      {(isLoading || isFetching) && <Loader className={styles['product__loader']} />}
+      {isSuccess && !isFetching && (
         <div className={styles['product']}>
           <div className={`${styles['product__inner']} container`}>
             <div className={styles['product__card']}>

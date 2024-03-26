@@ -164,6 +164,12 @@
     justify-content: space-between;
     gap: 20px;
     overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__suggestions-product {
