@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: var(--header-height);
     padding-block: 23px;
     border-bottom: 1px solid var(--color-dark-transparent-10);
 
@@ -20,15 +21,57 @@
   }
 
   &__menu {
+    @include breakpoint($tablet - 0.1px, max) {
+      display: none;
+
+      &--mobile-visible {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: var(--color-bg);
+      }
+    }
+  }
+
+  &__menu {
     &-list {
       display: flex;
       gap: 24px;
       white-space: nowrap;
+
+      @include breakpoint($tablet - 0.1px, max) {
+        flex-direction: column;
+        gap: 0;
+      }
     }
 
     &-item {
-      &:hover {
-        border-bottom: 1px solid var(--color-dark);
+      @include breakpoint($tablet - 0.1px, max) {
+        padding-block: 20px;
+        border-bottom: 1px solid var(--color-dark-transparent-10);
+        font-size: var(--font-size-body-lg);
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+
+    &-close-button {
+      display: none;
+      @include breakpoint($tablet - 0.1px, max) {
+        &--mobile-visible {
+          display: block;
+          position: absolute;
+          top: 20px;
+          left: 25px;
+          width: 24px;
+          height: 24px;
+          font-size: var(--font-size-body-lg);
+          font-weight: 900;
+        }
       }
     }
   }

@@ -36,6 +36,12 @@
 
   --container-padding-inline: 16px;
 
+  --header-height: 64px;
+
+  @include breakpoint($tablet) {
+    --header-height: 94px;
+  }
+
   @include breakpoint($mobile) {
     --container-padding-inline: 25px;
   }

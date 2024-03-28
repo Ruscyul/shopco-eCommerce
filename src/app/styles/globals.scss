@@ -37,3 +37,8 @@ input {
 .visible {
   display: block;
 }
+
+.disabled {
+  color: var(--color-dark-transparent-40);
+  cursor: not-allowed;
+}
